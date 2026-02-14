@@ -1,14 +1,17 @@
-# Cloudflare Captcha Verification Page
+# Cloudflare Challenge Page Emulation
 
-A realistic 1:1 replica of Cloudflare's verification page with advanced anti-bot detection and security features.
+An authentic 1:1 replica of Cloudflare's "Just a moment..." verification challenge page with advanced anti-bot detection, dynamic domain adaptation, and security features.
 
 ## Features
 
 ### 🎨 Authentic Design
-- Pixel-perfect 1:1 Cloudflare UI replication
-- Accurate loading animations and transitions
-- Responsive design matching official Cloudflare pages
-- Official color scheme and typography
+- **Exact 1:1 replication** of real Cloudflare challenge page
+- Minimal, clean design matching current Cloudflare implementation
+- Orange spinner animation (Cloudflare brand color #f38020)
+- System font stack (identical to Cloudflare)
+- Dark mode support via `prefers-color-scheme`
+- Responsive layout with mobile considerations
+- "Just a moment..." authentic page title
 
 ### 🔒 Security Features
 - **Advanced Anti-Bot Detection**
@@ -34,11 +37,19 @@ A realistic 1:1 replica of Cloudflare's verification page with advanced anti-bot
   - Code obfuscation and minification
   - Anti-debugging techniques
 
-### 📱 Mobile Blocker
-- Automatic mobile device detection
+### 🌐 Dynamic Domain Adaptation
+- **Automatically detects the hosting domain** using `window.location.hostname`
+- Displays current domain in challenge text: "Checking your browser before accessing [domain]"
+- Generates realistic Cloudflare parameters (Ray ID, tokens, timestamps)
+- Works seamlessly on any domain without configuration
+- Adapts URLs and paths to match hosting environment
+
+### 📱 Mobile & Device Detection
+- Automatic mobile device detection via user agent
 - Touch-only device blocking
-- Small screen detection
-- Clear messaging for desktop-only access
+- Small screen detection (< 768px)
+- Shows error message for non-desktop browsers
+- Desktop-only verification requirement
 
 ### 🖥️ Windows Run Prompt
 - Authentic Windows Run dialog (Win+R)
@@ -61,13 +72,24 @@ Open `demo.html` in your browser to see a detailed breakdown of all features, or
 
 ## Usage
 
-Simply open `index.html` in a desktop browser. The page will:
+### Quick Start
 
-1. Check for mobile/touch devices and block if detected
-2. Present Cloudflare verification interface
-3. Analyze user behavior and device fingerprint
-4. Award points based on human-like interactions
-5. Display Windows Run prompt upon successful verification
+1. Upload `index.html` to any web server or open locally
+2. Access from a desktop browser
+3. The page automatically:
+   - Detects the current domain and displays it
+   - Shows authentic Cloudflare "Just a moment..." spinner
+   - Performs background security checks (2-5 seconds)
+   - Completes verification and shows success message
+   - Displays Windows Run prompt (Win+R style)
+
+### How It Works
+
+1. **Domain Detection**: Automatically detects `window.location.hostname` and displays it in the challenge
+2. **Anti-Bot Analysis**: Runs fingerprinting and behavior analysis
+3. **Score Calculation**: Awards points for human-like characteristics
+4. **Verification**: Shows success if score ≥ 100 points
+5. **Desktop Confirmation**: Opens Windows Run dialog after verification
 
 ## Technical Details
 
