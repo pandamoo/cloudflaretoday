@@ -110,6 +110,12 @@
             padding: 32px;
             background: #fafafa;
             margin-bottom: 24px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+            transition: box-shadow 0.3s ease;
+        }
+        
+        .verification-box:hover {
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
         }
 
         .checkbox-container {
@@ -129,8 +135,13 @@
             align-items: center;
             justify-content: center;
             background: #fff;
-            transition: all 0.3s ease;
+            transition: all 0.3s cubic-bezier(0.4, 0.0, 0.2, 1);
             position: relative;
+            cursor: pointer;
+        }
+        
+        .checkbox:hover {
+            border-color: #b8b8b8;
         }
 
         .checkbox.loading {
@@ -231,10 +242,22 @@
             transform: translate(-50%, -50%);
             background: #f0f0f0;
             border: 1px solid #0078d4;
-            box-shadow: 0 0 0 1px rgba(0,0,0,0.1), 0 8px 16px rgba(0,0,0,0.3);
+            box-shadow: 0 0 0 1px rgba(0,0,0,0.1), 0 8px 16px rgba(0,0,0,0.3), 0 2px 4px rgba(0,0,0,0.2);
             width: 400px;
             font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
             z-index: 100000;
+            animation: fadeIn 0.2s ease-out;
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translate(-50%, -48%);
+            }
+            to {
+                opacity: 1;
+                transform: translate(-50%, -50%);
+            }
         }
 
         .winr-prompt.active {
@@ -343,10 +366,20 @@
             height: 100%;
             background: rgba(0,0,0,0.3);
             z-index: 99999;
+            animation: overlayFadeIn 0.3s ease-out;
         }
 
         .overlay.active {
             display: block;
+        }
+        
+        @keyframes overlayFadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
         }
     </style>
 </head>
